@@ -3,10 +3,11 @@
 
 #####################################################
 # Engenharia de Computação Insper
-# Camada Física da Computação 2021.2# 
-# Professor: Rodrigo Carareto
+# Camada Física da Computação 2021.1
 # Aluno: Marcos Vinícius da Silva
-# Data de criação do arquivo: 24/08/2021
+# 03/09/2021
+# Projeto Client-Server
+# Interface Física Server
 #####################################################
 
 # Importa pacote de comunicação serial

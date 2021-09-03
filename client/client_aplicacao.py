@@ -2,8 +2,8 @@
 # Engenharia de Computação Insper
 # Camada Física da Computação 2021.1
 # Aluno: Marcos Vinícius da Silva
-# 24/08/2021
-# Projeto Loopback
+# 03/09/2021
+# Projeto Client-Server
 ####################################################
 
 # esta é a camada superior, de aplicação do seu software de comunicação serial UART.

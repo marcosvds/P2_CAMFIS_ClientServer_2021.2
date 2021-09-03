@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #####################################################
-# Camada Física da Computação
-#Carareto
-#17/02/2018
-#  Camada de Enlace
+# Engenharia de Computação Insper
+# Camada Física da Computação 2021.1
+# Aluno: Marcos Vinícius da Silva
+# 03/09/2021
+# Projeto Client-Server
+# Camada de Enlace RX Server
 ####################################################
 
 # Importa pacote de tempo
