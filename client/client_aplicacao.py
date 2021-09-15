@@ -126,49 +126,6 @@ def main():
         print("    Status da transmissão: {}".format(txSize))
         print("\n")
 
-        # Agora vamos iniciar a recepção dos dados. Se algo chegou ao RX, deve estar automaticamente guardado
-        # Observe o que faz a rotina dentro do thread RX
-        # print um aviso de que a recepção vai começar.
-
-        # print("---------------------------")
-        #print("4. A recepção vai começar.")
-        # print("---------------------------")
-        # print("\n")
-
-        # Será que todos os bytes enviados estão realmente guardados? Será que conseguimos verificar?
-        # Veja o que faz a funcao do enlaceRX  getBufferLen
-
-        # acesso aos bytes recebidos
-        #txLen = len(txBuffer)
-        #rxBuffer, nRx = com1.getData(txLen)
-
-        # faça aqui uma conferência do tamanho do seu RxBuffer, ou seja, quantos bytes serão enviados.
-        #tamRxBuffer = len(rxBuffer)
-        #print("    Tamanho do rxBuffer: {}" .format(tamRxBuffer))
-        # print("\n")
-
-        #print("Bytes carregados em Rx: \n {}" .format(rxBuffer))
-        # print("\n")
-
-        # Escreve arquivo cópia
-        # print("------------------------------")
-        #print("5. Salvando dados no arquivo.")
-        # print("------------------------------")
-
-        # print("\n")
-        #print("    Endereço da imagem recebida: {}" .format(imagemRecebida))
-        # print("\n")
-        #file = open(imagemRecebida, 'wb')
-        # file.write(rxBuffer)
-
-        # print("----------------------------")
-        #print("6. Arquivo de imagem salvo.")
-        # print("----------------------------")
-        # print("\n")
-
-        # Fecha arquivo de imagem
-        # file.close()
-
         # Encerra comunicação
         print("--------------------------------------")
         print("7. Comunicação encerrada com sucesso!")
