@@ -13,11 +13,11 @@
 import time
 
 # Interface Física
-from interfaceFisica import *
+from client_interfaceFisica import *
 
 # enlace Tx e Rx
-from enlaceRx import RX
-from enlaceTx import TX
+from client_enlaceRx import RX
+from client_enlaceTx import TX
 
 class enlace(object):
     
