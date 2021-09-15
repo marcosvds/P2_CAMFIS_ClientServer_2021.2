@@ -20,6 +20,9 @@ import binascii
 # Interface com a camada física #
 #################################
 
+start_bit = b'\x01'
+stop_bit = b'\x03'
+
 class fisica(object):
     def __init__(self, name):
         self.name        = name
