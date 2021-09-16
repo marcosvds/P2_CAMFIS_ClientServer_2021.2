@@ -20,8 +20,8 @@ import binascii
 # Interface com a camada física #
 #################################
 
-start_bit = b'\x01'
-stop_bit = b'\x03'
+START_ORDER = b'\xff\xff\xff\x00\x00\x00'
+END_ORDER = b'\x00\x00\x00\xff\xff\xff'
 
 class fisica(object):
     def __init__(self, name):

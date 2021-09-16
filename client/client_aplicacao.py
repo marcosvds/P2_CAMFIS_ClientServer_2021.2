@@ -10,12 +10,9 @@
 # para acompanhar a execução e identificar erros, construa prints ao longo do código!
 
 import random
-from client_interfaceFisica import start_bit, stop_bit
-from client_enlace import *
+from client_interfaceFisica import START_ORDER, END_ORDER
 import binascii
-
-
-#from enlace import *
+from client_enlace import *
 import numpy as np
 import time
 
@@ -69,9 +66,15 @@ def main():
         print("-----------------------")
         print("\n")
 
-        # Conferência do star_byte
-        binary_start_bit = bin(int.from_bytes(start_bit, byteorder='little'))  # vira string
-        print("   Start bit: {}" .format(binary_start_bit))
+        # Conferência do START_ORDER
+        print("   Start Order: {}" .format(START_ORDER))
+        print("   Tipo do Start Order: {}" .format(type(START_ORDER)))
+        print("\n")
+
+        # Vamos enviar o número total de comandos enviados em formato hexadecimal
+        num_comandos_hexadecimal = bytes([num_comandos])
+        print("   Número de comandos: {}" .format(num_comandos_hexadecimal))
+        print("   Tipo do Número de comandos: {}" .format(type(num_comandos_hexadecimal)))
         print("\n")
 
         # Conferência do payload
@@ -79,16 +82,13 @@ def main():
         for comando in lista_payloads:
             payload += comando
         print("   Payload: {}" .format(payload))
+        print("   Tipo do Payload: {}" .format(type(payload)))
         print("\n")
 
-        # Conferência do stop_bit
-        binary_stop_bit = bin(int.from_bytes(stop_bit, byteorder='little'))
-        print("   Stop bit: {}" .format(binary_stop_bit))
-        print("\n")
 
         # Criando txBuffer
         txBuffer = b''
-        txBuffer += start_bit + payload + stop_bit
+        txBuffer += START_ORDER + num_comandos_hexadecimal + payload
 
         # Conferência do txBuffer.
         print("   Bytes carregados em Tx: {}" .format(txBuffer))
@@ -97,11 +97,7 @@ def main():
         # Conferência do tamanho do txBuffer, ou seja, quantos bytes serão enviados.
         tamTxBuffer = len(txBuffer)
         print("   Tamanho do txBuffer: {} bytes" .format(tamTxBuffer))
-        print("\n")
-
-        # Conferência do tipo do txBuffer
-        tipoTxBuffer = type(txBuffer)
-        print("   Tipo do txBuffer: {}" .format(tipoTxBuffer))
+        print("   Tipo do txBuffer: {}" .format(type(txBuffer)))
         print("\n")
 
         # finalmente vamos transmitir os tados. Para isso usamos a funçao sendData que é um método da camada enlace.
@@ -127,13 +123,10 @@ def main():
         print("\n")
 
         # Encerra comunicação
-        print("--------------------------------------")
-        print("7. Comunicação encerrada com sucesso!")
-        print("--------------------------------------")
         com1.disable()
 
     except Exception as erro:
-        print("ops! :-\\")
+        print("Não foi possível iniciar a comunicação client!")
         print(erro)
         com1.disable()
 
